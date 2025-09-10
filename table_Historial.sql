@@ -1,7 +1,7 @@
 USE [Prueba]
 GO
 
-/****** Object:  Table [dbo].[Historial]    Script Date: 07/09/2025 01:05:32 p. m. ******/
+/****** Object:  Table [dbo].[Historial]    Script Date: 10/09/2025 08:41:52 a. m. ******/
 SET ANSI_NULLS ON
 GO
 
@@ -19,10 +19,6 @@ CREATE TABLE [dbo].[Historial](
 	[idHistorial] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-
-ALTER TABLE [dbo].[Historial]  WITH CHECK ADD FOREIGN KEY([idProducto])
-REFERENCES [dbo].[Producto] ([idProducto])
 GO
 
 ALTER TABLE [dbo].[Historial]  WITH CHECK ADD FOREIGN KEY([idUsuario])
