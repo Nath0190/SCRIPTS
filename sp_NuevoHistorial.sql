@@ -1,7 +1,7 @@
 USE [Prueba]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_NuevoHistorial]    Script Date: 07/09/2025 01:10:52 p. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_NuevoHistorial]    Script Date: 10/09/2025 08:44:16 a. m. ******/
 SET ANSI_NULLS ON
 GO
 
@@ -15,8 +15,8 @@ CREATE PROCEDURE [dbo].[sp_NuevoHistorial](
 ) AS
 BEGIN
 
-	INSERT INTO Historial (idUsuario, idProducto, tipoMoviento, fechaModificacion)
-	VALUES(@p_idProducto,@p_idUsuario, @p_movimiento, GETDATE())
+	INSERT INTO Historial (idUsuario, idProducto, tipoMovimiento, fechaModificacion)
+	VALUES(@p_idUsuario,@p_idProducto, @p_movimiento, GETDATE())
 
 END
 GO

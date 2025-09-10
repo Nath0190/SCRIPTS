@@ -1,7 +1,7 @@
 USE [Prueba]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_sesion]    Script Date: 07/09/2025 01:11:30 p. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_sesion]    Script Date: 10/09/2025 08:45:26 a. m. ******/
 SET ANSI_NULLS ON
 GO
 
@@ -12,7 +12,7 @@ GO
 CREATE PROCEDURE [dbo].[sp_sesion] (
 	--@p_idUsuario int,
 	@p_correo varchar(50),
-	@p_contrasena varchar(25) 
+	@p_contrasena varchar(25)	
 ) AS
 BEGIN
 	SELECT 
@@ -24,3 +24,4 @@ BEGIN
 	-- U.idUsuario =@p_idUsuario AND	
 END
 GO
+

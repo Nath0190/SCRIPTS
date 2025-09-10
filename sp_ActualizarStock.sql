@@ -1,7 +1,7 @@
 USE [Prueba]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_ActualizarStock]    Script Date: 07/09/2025 01:08:46 p. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_ActualizarStock]    Script Date: 10/09/2025 08:42:46 a. m. ******/
 SET ANSI_NULLS ON
 GO
 
@@ -14,18 +14,21 @@ CREATE PROCEDURE [dbo].[sp_ActualizarStock](
 	@p_cantidad int
 ) AS
 BEGIN
-	DECLARE @cont int
-	SET @cont  = (SELECT cantidad FROM Producto WHERE idProducto=@p_idProducto)
+	DECLARE @contExistente int
+	SET @contExistente  = (SELECT cantidad FROM Producto WHERE idProducto=@p_idProducto)
 
-	IF @cont > @p_cantidad 
+	IF @p_cantidad >@contExistente   
 	BEGIN
+		DECLARE  @resultado int = (@contExistente +@p_cantidad)
 		UPDATE Producto SET
-			cantidad = @p_cantidad
+			cantidad = @resultado
 		WHERE idProducto = @p_idProducto
+		EXECUTE dbo.sp_NuevoHistorial @p_idProducto =@p_idProducto , @p_idUsuario=1, @p_movimiento='ENTRADA'
+		SELECT  'ok' as msj
 	END
 	ELSE 
 	BEGIN
-		SELECT  'Error' as msj
+		SELECT  'ErrorCantidadNoExiste' as msj
 	END
 
 END

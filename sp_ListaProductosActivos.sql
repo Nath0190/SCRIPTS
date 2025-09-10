@@ -1,7 +1,7 @@
 USE [Prueba]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_ListaProductosActivos]    Script Date: 07/09/2025 01:10:32 p. m. ******/
+/****** Object:  StoredProcedure [dbo].[sp_ListaProductosActivos]    Script Date: 10/09/2025 08:44:05 a. m. ******/
 SET ANSI_NULLS ON
 GO
 
